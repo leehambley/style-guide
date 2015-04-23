@@ -1,0 +1,51 @@
+// Indicators
+
+// Base styles
+.indicator {
+
+  display: inline-block;
+  margin-bottom: 0; // For input.btn
+  border-radius:  $indicator-border-radius;
+  border-color:   $indicator-border-color;
+  border-style:   $indicator-border-style;
+
+}
+
+.indicator-sm {
+  width:         $indicator-width;
+  height:        $indicator-height;
+  border-width:  $indicator-border-width;
+}
+
+.indicator-md {
+  width:         $indicator-width*2;
+  height:        $indicator-height*2;
+  border-width:  $indicator-border-width*1.5;
+}
+
+.indicator-lg {
+  width:         $indicator-width*3;
+  height:        $indicator-height*3;
+  border-width:  $indicator-border-width*2;
+}
+
+.indicator-success {
+  border-color: $c-success;
+}
+
+.indicator-info {
+  border-color: $c-info-dark;
+}
+
+.indicator-failure {
+  border-color: $c-danger-darker;
+}
+
+.indicator-fatal {
+  border-color: $c-gray-darker;
+}
+
+.indicator-active {
+  border-style: dotted;
+  animation: rotate 1s linear infinite;
+}

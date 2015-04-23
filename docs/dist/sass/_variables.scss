@@ -5,57 +5,57 @@
 // -----------------------------------------------------------------------------
 
 // Greys
-$gray-base: #000;
-$c-gray-darker: lighten($gray-base, 20%);
-$c-gray-dark: lighten($gray-base, 40%);
-$c-gray: lighten($gray-base, 60%);
-$c-gray-light: lighten($gray-base, 80%);
-$c-gray-lighter: lighten($gray-base, 95%);
+$gray-base:       #000;
+$c-gray-darker:   lighten($gray-base, 20%);
+$c-gray-dark:     lighten($gray-base, 40%);
+$c-gray:          lighten($gray-base, 60%);
+$c-gray-light:    lighten($gray-base, 80%);
+$c-gray-lighter:  lighten($gray-base, 95%);
 
 // Greens
-$green-darker: #01a510;
-$green-dark: #25bb41;
-$green: #56d980;
-$green-light: #7befb1;
+$green:         #9FD800;
+$green-dark:    darken($green, 10%);
+$green-darker:  darken($green, 20%);
+$green-light:   lighten($green, 10%);
 
 // Blue Greens
-$blue-green-darker: #00979e;
-$blue-green-dark: #15a9ab;
-$blue-green: #3eccc4;
-$blue-green-light: #67efde;
+$purple-darker:  #2C1137;
+$purple-dark:    lighten($purple-darker, 10%);
+$purple:         lighten($purple-darker, 20%);
+$purple-light:   lighten($purple-darker, 30%);
 
 // Blues
-$blue-darker: #1686c5;
-$blue-dark: #2b9dd0;
-$blue: #00c5e5;
-$blue-light: #6ce1f2;
+$blue-darker:  #1686c5;
+$blue-dark:    #2b9dd0;
+$blue:         #00c5e5;
+$blue-light:   #6ce1f2;
 
 // Reds
-$red-darker: #d83d3d;
-$red-dark: #e55e5e;
-$red: #fc8b8b;
-$red-light: #fbb;
+$red-darker:  #d83d3d;
+$red-dark:    #e55e5e;
+$red:         #fc8b8b;
+$red-light:   #fbb;
 
 // Color mappings
-$c-primary: $blue;
-$c-success: $green;
-$c-info: $blue-green;
-$c-danger: $red;
+$c-primary:  $purple;
+$c-success:  $green;
+$c-info:     $blue;
+$c-danger:   $red;
 
-$c-primary-darker: $blue-darker;
-$c-success-darker: $green-darker;
-$c-info-darker: $blue-green-darker;
-$c-danger-darker: $red-darker;
+$c-primary-darker:  $purple-darker;
+$c-success-darker:  $green-darker;
+$c-info-darker:     $blue-darker;
+$c-danger-darker:   $red-darker;
 
-$c-primary-dark: $blue-dark;
-$c-success-dark: $green-dark;
-$c-info-dark: $blue-green-dark;
-$c-danger-dark: $red-dark;
+$c-primary-dark:  $purple-dark;
+$c-success-dark:  $green-dark;
+$c-info-dark:     $blue-dark;
+$c-danger-dark:   $red-dark;
 
-$c-primary-light: $blue-light;
-$c-success-light: $green-light;
-$c-info-light: $blue-green-light;
-$c-danger-light: $red-light;
+$c-primary-light:  $purple-light;
+$c-success-light:  $green-light;
+$c-info-light:     $blue-light;
+$c-danger-light:   $red-light;
 
 
 // -----------------------------------------------------------------------------
@@ -63,9 +63,9 @@ $c-danger-light: $red-light;
 // -----------------------------------------------------------------------------
 
 // Font sizes
-$font-size-base: 14px;
-$font-size-large: 16px;
-$font-size-small: 11px;
+$font-size-base:   14px;
+$font-size-large:  16px;
+$font-size-small:  11px;
 
 $font-size-h1: 24px;
 $font-size-h2: 22px;
@@ -74,13 +74,13 @@ $font-size-h4: 11px;
 $font-size-h5: 11px;
 
 // Line heights
-$line-height-base: 1.428571429; // 20/14;
-$line-height-computed: floor(($font-size-base * $line-height-base)); //~20px
+$line-height-base:      1.428571429; // 20/14;
+$line-height-computed:  floor(($font-size-base * $line-height-base)); //~20px
 
 // Mobile font sizes
-$font-size-base-mobile: 12px;
-$font-size-large-mobile: 14px;
-$font-size-small-mobile: 10px;
+$font-size-base-mobile:   12px;
+$font-size-large-mobile:  14px;
+$font-size-small-mobile:  10px;
 
 $font-size-h1-mobile: 22px;
 $font-size-h2-mobile: 20px;
@@ -88,22 +88,35 @@ $font-size-h3-mobile: 12px;
 $font-size-h4-mobile: 10px;
 $font-size-h5-mobile: 10px;
 
-// Font family and weight
-$gotham-font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
-$monospace-font-family: menlo, monaco, monospace;
-$gotham-light-weight: 300;
-$gotham-medium-weight: 500;
+// Font families and weight
+$gotham-font-family:     'Gotham SSm A', 'Gotham SSm B', sans-serif;
+$gotham-light-weight:    300;
+$gotham-medium-weight:   500;
+
+// https://www.google.com/fonts#UsePlace:use/Collection:Open+Sans:300italic,400italic,600italic,400,300,600
+$opensans-font-family:   'Open Sans', sans-serif;
+$opensans-light-weight:  300;
+$opensans-medium-weight: 600;
+
+// https://www.google.com/fonts#UsePlace:use/Collection:Open+Sans:300italic,400italic,600italic,400,300,600
+$proximanova-font-family:   'Proxima Nova', sans-serif;
+$proximanova-light-weight:  300;
+$proximanova-medium-weight: 600;
+
+$monospace-font-family:  menlo, monaco, monospace;
 
 %sans-serif-light {
-    font-family: $gotham-font-family;
-    font-weight: $gotham-light-weight;
-    font-style: normal;
+    font-family:     $opensans-font-family;
+    font-weight:     $opensans-light-weight;
+    font-style:      normal;
+    letter-spacing:  0.05em;
 }
 
 %sans-serif-medium {
-    font-family: $gotham-font-family;
-    font-weight: $gotham-medium-weight;
-    font-style: normal;
+    font-family:     $opensans-font-family;
+    font-weight:     $opensans-medium-weight;
+    font-style:      normal;
+    letter-spacing:  0.05em;
 }
 
 
@@ -178,6 +191,18 @@ $table-border-color: $c-gray-lighter;
 
 
 // -----------------------------------------------------------------------------
+// Indicators
+// -----------------------------------------------------------------------------
+
+// <input> colors
+$indicator-border-color: $c-gray;
+$indicator-border-radius: 500px;
+$indicator-border-style: solid;
+$indicator-border-width: 2px;
+$indicator-width:  10px;
+$indicator-height: $indicator-width;
+
+// -----------------------------------------------------------------------------
 // Forms
 // -----------------------------------------------------------------------------
 
@@ -234,3 +259,9 @@ $container-lg: $container-large-desktop;
 $screen-sm-min: 768px;
 $screen-md-min: 992px;
 $screen-lg-min: 1200px;
+
+// -----------------------------------------------------------------------------
+// Animations
+// -----------------------------------------------------------------------------
+
+@keyframes rotate { 100% { transform: rotate(360deg); } }

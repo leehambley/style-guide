@@ -3,14 +3,23 @@ module.exports = function( grunt ) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
+    svg2png: {
+      all: {
+        // specify files in array format with multiple src-dest mapping
+        files: [
+          { cwd: 'assets/images/', src: ['**/*.svg'], dest: 'img/png/' }
+        ]
+      }
+    },
+
     sass: {
       dist: {
         files: {
-          'dist/prism.css': 'sass/prism.scss'
+          'dist/harrow.css': 'sass/harrow.scss'
         },
         options: {
           sourceComments: 'map',
-          sourceMap: 'dist/prism.css.map'
+          sourceMap: 'dist/harrow.css.map'
         }
       }
     },
@@ -38,8 +47,8 @@ module.exports = function( grunt ) {
         browsers: [ 'last 2 version', 'ie 9' ]
       },
       dev: {
-        src: 'dist/prism.css',
-        dest: 'dist/prism.css'
+        src: 'dist/harrow.css',
+        dest: 'dist/harrow.css'
       }
     },
 
@@ -84,13 +93,20 @@ module.exports = function( grunt ) {
         files: [
           'sass/**/*.scss'
         ],
-        tasks: [ 'sass:dev', 'autoprefixer' ]
+        tasks: [ 'sass:dist', 'autoprefixer' ]
+      },
+      // Watch and compile SVG to PNG
+      sass: {
+        files: [
+          'assets/images/**/*.svg'
+        ],
+        tasks: [ 'svg2png:all' ]
       },
       // Watch the compiled css files and reload here. Do this for preprocessors because the
       // file watched with options livereload is sent to the server. Dont send sass this way
       livereload: {
         files: [
-          'dist/prism.css'
+          'dist/harrow.css'
         ],
         options: { livereload: true }
       }
@@ -104,6 +120,7 @@ module.exports = function( grunt ) {
   grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-grunticon');
+  grunt.loadNpmTasks('grunt-svg2png');
 
   // Local development with watch and js checkers
   grunt.registerTask( 'develop', [
