@@ -3,15 +3,6 @@ module.exports = function( grunt ) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
-    svg2png: {
-      all: {
-        // specify files in array format with multiple src-dest mapping
-        files: [
-          { cwd: 'assets/images/', src: ['**/*.svg'], dest: 'img/png/' }
-        ]
-      }
-    },
-
     sass: {
       dist: {
         files: {
@@ -27,17 +18,17 @@ module.exports = function( grunt ) {
     copy: {
       dist: {
         files: [
-          { expand: true, src: 'sass/**', dest: 'dist/' }
+          { expand: true, src: 'sass/**/*', dest: 'dist/' }
         ]
       },
-      icons: {
-        src: 'dist/assets/icons/icons.data.svg.css',
-        dest: 'sass/icons/_icons.scss'
+      images: {
+        files: [
+          { expand: true, src: 'assets/images/**', dest: 'dist/' }
+        ]
       },
       docs: {
         files: [
-          { expand: true, src: 'dist/**', dest: 'docs/' },
-          { exapnd: true, src: 'dist/assets/icons/preview.html', dest: 'docs/_includes/generated-icons.html' }
+          { expand: true, src: 'dist/**/*', dest: 'docs/' }
         ]
       }
     },
@@ -49,15 +40,6 @@ module.exports = function( grunt ) {
       dev: {
         src: 'dist/harrow.css',
         dest: 'dist/harrow.css'
-      }
-    },
-
-    connect: {
-      server: {
-        options: {
-          port: 8888,
-          base: 'docs'
-        }
       }
     },
 
@@ -93,22 +75,7 @@ module.exports = function( grunt ) {
         files: [
           'sass/**/*.scss'
         ],
-        tasks: [ 'sass:dist', 'autoprefixer' ]
-      },
-      // Watch and compile SVG to PNG
-      sass: {
-        files: [
-          'assets/images/**/*.svg'
-        ],
-        tasks: [ 'svg2png:all' ]
-      },
-      // Watch the compiled css files and reload here. Do this for preprocessors because the
-      // file watched with options livereload is sent to the server. Dont send sass this way
-      livereload: {
-        files: [
-          'dist/harrow.css'
-        ],
-        options: { livereload: true }
+        tasks: [ 'sass:dist', 'autoprefixer', 'copy:dist', 'copy:docs' ]
       }
     }
   });
@@ -118,23 +85,22 @@ module.exports = function( grunt ) {
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-autoprefixer');
-  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-grunticon');
-  grunt.loadNpmTasks('grunt-svg2png');
 
   // Local development with watch and js checkers
   grunt.registerTask( 'develop', [
     'build',
-    'connect',
     'watch'
   ]);
   // Local development without js checkers and watch task
   grunt.registerTask( 'build', [
     'grunticon',
-    'copy:icons',
     'sass:dist',
     'autoprefixer',
     'copy:dist',
     'copy:docs',
+    'copy:images',
   ]);
+  // Less typing
+  grunt.registerTask( 'default', [ 'develop'] );
 };

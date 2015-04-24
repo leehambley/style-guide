@@ -1,0 +1,51 @@
+.jobwidget {
+  max-width: 350px;
+  display: inline-block;
+  & .jobwidget-heading, & .jobwidget-body {
+    padding: $padding-base-vertical * 2 $padding-base-horizontal;
+  }
+  & .jobwidget-heading {
+    background-color:         $c-primary-darker;
+    border-top-left-radius:   $jobwidget-radius-tl;
+    border-top-right-radius:  $jobwidget-radius-tr;
+    .fa {
+      display: inline-block;
+      width: 26px;
+      height: 28px;
+      background-color: #fff;
+    }
+    .jobwidget-indicators {
+      display: inline-block;
+      position-top: -15px;
+    }
+    .jobwidget-runtime{
+      float:  right;
+      a {
+        color:  $c-gray-lighter;
+      }
+    }
+  }
+  & .jobwidget-progress {
+    height: 4px;
+    background-color: #fff;
+    div {
+      &:before { content: "\00a0"; } // &nbsp; }
+      background-color: $c-attention;
+    }
+  }
+  & .jobwidget-body {
+    background-color: #fff;
+    border-bottom-left-radius:   $jobwidget-radius-bl;
+    border-bottom-right-radius:  $jobwidget-radius-br;
+    h3 {
+      a { color: $c-gray-dark; &:hover { color: $c-primary; } }
+    }
+    h4 {
+      a { color: $c-gray-light; &:hover { color: $c-primary; } }
+    }
+    .btn {
+      border-radius: 3px;
+      font-weight: $opensans-medium-weight;
+    }
+  }
+}

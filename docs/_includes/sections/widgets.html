@@ -1,26 +1,66 @@
-<section class="job-widget-section main-section">
-  <h2 id="tables" class="section-header">Job Widget</h2>
-  <h3 id="tables-base" class="sub-section-header">Basic Job Widget</h3>
-  <p>Widgets are for jobs, you know how it works</p>
+<section class="jobwidget-section main-section">
+  <h2 id="jobwidget" class="section-header">Job Widget</h2>
+  <h3 id="jobwidget-basic" class="sub-section-header">Basic Job Widget</h3>
+  <p>Widgets are for jobs, you know how it works, they ought to be placed in appropriately sized grid boxes</p>
   <div class="prism-example">
     <div class="example-content">
       <!-- Example -->
       <div class="jobwidget">
         <div class="jobwidget-heading">
           <i class="fa fa-rocket"></i>
+          <div class="jobwidget-indicators">
+            <i class="indicator indicator-sm indicator-success"></i>
+            <i class="indicator indicator-sm indicator-success"></i>
+            <i class="indicator indicator-sm indicator-success"></i>
+            <i class="indicator indicator-sm indicator-attention indicator-active"></i>
+          </div>
+          <span class="jobwidget-runtime text-right">
+            <a href="">
+              <i class="indicator indicator-sm indicator-active"></i>
+              7 Minutes
+            </a>
+          </span>
+        </div>
+        <div class="jobwidget-progress">
+          <div class="progress" style="width: 50%"></div>
         </div>
         <div class="jobwidget-body">
-          <h4>Project Name</h4>
-          <h3>Job Name Including Environment</h3>
+          <h4><a href="">Project Name</a></h4>
+          <h3><a href="">Job Name Including Environment</a></h3>
+          <p>This is usually the job description, it ought to look good here, but who knows, really</p>
+          <button type="button" class="btn btn-success btn-lg">Large Success button</button>
         </div>
       </div>
       <!-- End Example -->
     </div>
     <div class="example-code">
 {% highlight html %}
-<table class="table">
-...
-</table>
+<div class="jobwidget">
+  <div class="jobwidget-heading">
+    <i class="fa fa-rocket"></i>
+    <div class="jobwidget-indicators">
+      <i class="indicator indicator-sm indicator-success"></i>
+      <i class="indicator indicator-sm indicator-success"></i>
+      <i class="indicator indicator-sm indicator-success"></i>
+      <i class="indicator indicator-sm indicator-attention indicator-active"></i>
+    </div>
+    <span class="jobwidget-runtime text-right">
+      <a href="">
+        <i class="indicator indicator-sm indicator-active"></i>
+        7 Minutes
+      </a>
+    </span>
+  </div>
+  <div class="jobwidget-progress">
+    <div class="progress" style="width: 50%"></div>
+  </div>
+  <div class="jobwidget-body">
+    <h4><a href="">Project Name</a></h4>
+    <h3><a href="">Job Name Including Environment</a></h3>
+    <p>This is usually the job description, it ought to look good here, but who knows, really</p>
+    <button type="button" class="btn btn-success btn-lg">Large Success button</button>
+  </div>
+</div>
 {% endhighlight %}
     </div>
   </div>

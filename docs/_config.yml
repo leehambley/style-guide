@@ -1,4 +1,11 @@
 highlighter: pygments
 
+exclude: ['Gemfile', 'Gemfile.lock', 'Guardfile' ]
+
+# Disables .sass-cache (very important)
+#   https://github.com/jekyll/jekyll-sass-converter/issues/36
+safe:
+  true
+
 sass:
-  sass_dir: dist/sass
+  sass_dir: ../dist/sass

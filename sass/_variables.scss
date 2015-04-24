@@ -13,16 +13,23 @@ $c-gray-light:    lighten($gray-base, 80%);
 $c-gray-lighter:  lighten($gray-base, 95%);
 
 // Greens
-$green:         #9FD800;
-$green-dark:    darken($green, 10%);
-$green-darker:  darken($green, 20%);
-$green-light:   lighten($green, 10%);
+$green:           #9fd800;
+$green-dark:      darken($green, 10%);
+$green-darker:    darken($green, 20%);
+$green-light:     lighten($green, 10%);
 
-// Blue Greens
-$purple-darker:  #2C1137;
-$purple-dark:    lighten($purple-darker, 10%);
-$purple:         lighten($purple-darker, 20%);
-$purple-light:   lighten($purple-darker, 30%);
+// Purple
+$purple-darker:   #2c1137;
+$purple-dark:     lighten($purple-darker, 10%);
+$purple:          lighten($purple-darker, 20%);
+$purple-light:    lighten($purple-darker, 30%);
+
+// Yellow
+$yellow:          #f8e71c;
+$yellow-light:    lighten($yellow, 10%);
+$yellow-dark:     darken($yellow, 10%);
+$yellow-darker:   darken($yellow, 20%);
+
 
 // Blues
 $blue-darker:  #1686c5;
@@ -37,26 +44,29 @@ $red:         #fc8b8b;
 $red-light:   #fbb;
 
 // Color mappings
-$c-primary:  $purple;
-$c-success:  $green;
-$c-info:     $blue;
-$c-danger:   $red;
+$c-primary:           $purple;
+$c-success:           $green;
+$c-attention:         $yellow;
+$c-info:              $blue;
+$c-danger:            $red;
 
-$c-primary-darker:  $purple-darker;
-$c-success-darker:  $green-darker;
-$c-info-darker:     $blue-darker;
-$c-danger-darker:   $red-darker;
+$c-primary-darker:    $purple-darker;
+$c-success-darker:    $green-darker;
+$c-attention-darker:  $yellow-darker;
+$c-info-darker:       $blue-darker;
+$c-danger-darker:     $red-darker;
 
-$c-primary-dark:  $purple-dark;
-$c-success-dark:  $green-dark;
-$c-info-dark:     $blue-dark;
-$c-danger-dark:   $red-dark;
+$c-primary-dark:      $purple-dark;
+$c-success-dark:      $green-dark;
+$c-attention-dark:    $yellow-dark;
+$c-info-dark:         $blue-dark;
+$c-danger-dark:       $red-dark;
 
-$c-primary-light:  $purple-light;
-$c-success-light:  $green-light;
-$c-info-light:     $blue-light;
-$c-danger-light:   $red-light;
-
+$c-primary-light:     $purple-light;
+$c-success-light:     $green-light;
+$c-attention-light:   $yellow-light;
+$c-info-light:        $blue-light;
+$c-danger-light:      $red-light;
 
 // -----------------------------------------------------------------------------
 // Typography
@@ -119,6 +129,18 @@ $monospace-font-family:  menlo, monaco, monospace;
     letter-spacing:  0.05em;
 }
 
+// -----------------------------------------------------------------------------
+// Widget and List Radii
+// -----------------------------------------------------------------------------
+$widget-radius-tl: 5px;
+$widget-radius-tr: 5px;
+$widget-radius-bl: 5px;
+$widget-radius-br: 5px;
+
+$jobwidget-radius-tl: $widget-radius-tl;
+$jobwidget-radius-tr: $widget-radius-tr;
+$jobwidget-radius-bl: $widget-radius-bl;
+$jobwidget-radius-br: $widget-radius-br;
 
 // -----------------------------------------------------------------------------
 // Components
@@ -143,7 +165,6 @@ $border-radius-small: 0;
 $component-active-color: #fff;
 $component-active-bg: $c-primary;
 
-
 // -----------------------------------------------------------------------------
 // Buttons
 // -----------------------------------------------------------------------------
@@ -151,9 +172,9 @@ $component-active-bg: $c-primary;
 $btn-font-weight: 300;
 
 // Define text, background and border color for each button type
-$btn-default-color: $c-gray-darker;
-$btn-default-bg: transparent;
-$btn-default-border: $c-gray-darker;
+$btn-default-color:  $c-primary-darker;
+$btn-default-bg:     transparent;
+$btn-default-border: $c-primary-darker;
 
 $btn-primary-color: #fff;
 $btn-primary-bg: $c-primary;
@@ -264,4 +285,11 @@ $screen-lg-min: 1200px;
 // Animations
 // -----------------------------------------------------------------------------
 
-@keyframes rotate { 100% { transform: rotate(360deg); } }
+@keyframes rotateIndicator {
+  0% {
+    transform:  rotate(0deg) ;
+  }
+  100% {
+    transform:  rotate(360deg) ;
+  }
+}
