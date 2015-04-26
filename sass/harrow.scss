@@ -5,7 +5,6 @@
 
 // Reset and dependencies
 @import "normalize/normalize";
-@import "icons/icons";
 
 // Font Awesome
 @import "fontawesome/font-awesome";
@@ -21,7 +20,7 @@
 // Components
 @import "indicators";
 @import "jobwidget";
-@import "lists";
+@import "operation-list";
 
 // Utility classes
 @import "utilities";

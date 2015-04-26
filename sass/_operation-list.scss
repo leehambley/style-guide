@@ -1,4 +1,4 @@
-ul.operation-list, ul.operation-list {
+ul.operation-list {
   margin: 0;
   padding: 0;
   li.operation-list-operation {
@@ -6,5 +6,6 @@ ul.operation-list, ul.operation-list {
     max-width: 350px;
     display: inline-block;
     padding: $padding-base-vertical * 2 $padding-base-horizontal;
+    outline: 1px solid green
   }
 }

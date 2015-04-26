@@ -51,13 +51,16 @@ module.exports = function( grunt ) {
     },
 
     copy: {
-      all: {
+      dist: {
         files: [
           { expand: true, src: 'sass/**/*', dest: 'dist/' },
           { expand: true, src: 'assets/**/*', dest: 'dist/' },
-
-          { expand: true, src: 'sass/**/*', dest: 'docs/' },
-          { expand: true, src: 'assets/**/*', dest: 'docs/' }
+        ],
+      },
+      docs: {
+        files: [
+          { expand: true, src: 'dist/sass**/*', dest: 'docs/' },
+          { expand: true, src: 'dist/assets/**/*', dest: 'docs/' }
         ]
       }
     },
@@ -98,7 +101,8 @@ module.exports = function( grunt ) {
     'svgmin',
     'respimg',
     'autoprefixer',
-    'copy:all'
+    'copy:dist',
+    'copy:docs',
   ]);
 
   grunt.registerTask( 'default', [ 'develop'] );
