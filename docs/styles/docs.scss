@@ -3,6 +3,17 @@
 
 @import "harrow";
 
+.assets-table {
+  td {
+    padding: $padding-large-vertical $padding-base-horizontal;
+    img {
+      &:hover {
+        outline: 1px dotted $c-success;
+      }
+    }
+  }
+}
+
 .styleguide-nav {
   position: fixed;
   top: 0;
