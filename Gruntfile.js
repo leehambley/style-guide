@@ -59,8 +59,7 @@ module.exports = function( grunt ) {
       },
       docs: {
         files: [
-          { expand: true, src: 'dist/sass**/*', dest: 'docs/' },
-          { expand: true, src: 'dist/assets/**/*', dest: 'docs/' }
+          { expand: true, src: 'dist/assets/**/*', dest: 'docs/assets/' }
         ]
       }
     },
@@ -77,7 +76,7 @@ module.exports = function( grunt ) {
 
     watch: {
       sass: {
-        files: [ 'assets/**/*', 'sass/**/*' ],
+        files: [ 'sass/**/*' ],
         tasks: [ 'build' ]
       }
     }
