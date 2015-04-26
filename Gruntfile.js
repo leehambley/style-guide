@@ -15,20 +15,49 @@ module.exports = function( grunt ) {
       }
     },
 
-    copy: {
+    svgmin: {
+      options: {
+        plugins: [
+          { removeViewBox:              false },
+          { removeUselessStrokeAndFill: false }
+        ]
+      },
       dist: {
-        files: [
-          { expand: true, src: 'sass/**/*', dest: 'dist/' }
-        ]
+        files: [{
+          expand:  true,
+          cwd:     "assets/images/svg",
+          src:     "**/*.svg",
+          dest:    "assets/images/png"
+        } ]
+      }
+    },
+
+    respimg: {
+      options: {
+        widths:  [ 160, 320, 640, 1280, 2560 ],
+        optimize: {
+          input:  { svgo: 0, image_optim: 0, picopt: 0, imageOptim: 0 },
+          output: { svgo: 0, image_optim: 0, picopt: 0, imageOptim: 0 }
+        }
       },
-      images: {
-        files: [
-          { expand: true, src: 'assets/images/**', dest: 'dist/' }
-        ]
+      default: {
+        files: [{
+          expand: true,
+          cwd: 'assets/images/src/',
+          src: ['**/*'],
+          dest: 'assets/images/'
+        }]
       },
-      docs: {
+    },
+
+    copy: {
+      all: {
         files: [
-          { expand: true, src: 'dist/**/*', dest: 'docs/' }
+          { expand: true, src: 'sass/**/*', dest: 'dist/' },
+          { expand: true, src: 'assets/**/*', dest: 'dist/' },
+
+          { expand: true, src: 'sass/**/*', dest: 'docs/' },
+          { expand: true, src: 'assets/**/*', dest: 'docs/' }
         ]
       }
     },
@@ -43,64 +72,34 @@ module.exports = function( grunt ) {
       }
     },
 
-    grunticon: {
-        myIcons: {
-            files: [{
-                expand: true,
-                cwd: 'assets/icons',
-                src: ['*.svg', '*.png'],
-                dest: "dist/assets/icons"
-            }],
-            options: {
-              previewTemplate: './assets/icons/_preview-template.hbs',
-              colors: {
-                graydarker: '#333',
-                graydark: '#666',
-                gray: '#999',
-                graylight: '#ccc',
-                graylighter: '#f2f2f2',
-                primary: '#00c5e5',
-                success: '#56d980',
-                info: '#3eccc4',
-                danger: '#fc8b8b',
-                white: '#fff'
-              }
-            }
-        }
-    },
-
     watch: {
-      // Watch and compile sass files, but don't reload here
       sass: {
-        files: [
-          'sass/**/*.scss'
-        ],
-        tasks: [ 'sass:dist', 'autoprefixer', 'copy:dist', 'copy:docs' ]
+        files: [ 'assets/**/*', 'sass/**/*' ],
+        tasks: [ 'build' ]
       }
     }
   });
 
   grunt.loadNpmTasks('grunt-sass');
+  grunt.loadNpmTasks('grunt-respimg');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-autoprefixer');
-  grunt.loadNpmTasks('grunt-grunticon');
+  grunt.loadNpmTasks('grunt-svgmin');
 
-  // Local development with watch and js checkers
   grunt.registerTask( 'develop', [
     'build',
     'watch'
   ]);
-  // Local development without js checkers and watch task
+
   grunt.registerTask( 'build', [
-    'grunticon',
     'sass:dist',
+    'svgmin',
+    'respimg',
     'autoprefixer',
-    'copy:dist',
-    'copy:docs',
-    'copy:images',
+    'copy:all'
   ]);
-  // Less typing
+
   grunt.registerTask( 'default', [ 'develop'] );
 };

@@ -21,10 +21,11 @@
     "grunt-contrib-cssmin": "~0.10.0",
     "grunt-contrib-jade": "~0.12.0",
     "grunt-contrib-watch": "0.5.3",
-    "grunt-grunticon": "~1.2.13",
     "grunt-phantom-svg2png": "^2.0.1",
+    "grunt-respimg": "^1.1.0",
     "grunt-sass": "0.10.0",
     "grunt-svg2png": "^0.2.7",
+    "grunt-svgmin": "^2.0.1",
     "grunt-touch": "^0.1.0"
   }
 }

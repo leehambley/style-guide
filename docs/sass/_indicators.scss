@@ -1,0 +1,74 @@
+// Indicators
+
+// Base styles
+.indicator {
+
+  display: inline-block;
+  margin-bottom: 0; // For input.btn
+  border-radius:  $indicator-border-radius;
+  border-color:   $indicator-border-color;
+  border-style:   $indicator-border-style;
+
+}
+
+.indicator-sm {
+  width:         $indicator-width;
+  height:        $indicator-height;
+  border-width:  $indicator-border-width;
+}
+
+.indicator-md {
+  width:         $indicator-width*2;
+  height:        $indicator-height*2;
+  border-width:  $indicator-border-width*1.5;
+}
+
+.indicator-lg {
+  width:         $indicator-width*3;
+  height:        $indicator-height*3;
+  border-width:  $indicator-border-width*2;
+}
+
+.indicator-success {
+  border-color: $c-success;
+}
+
+.indicator-attention {
+  border-color: $c-attention;
+}
+
+.indicator-info {
+  border-color: $c-info-dark;
+}
+
+.indicator-failure {
+  border-color: $c-danger-darker;
+}
+
+.indicator-fatal {
+  border-color: $c-gray-darker;
+}
+
+.indicator-active {
+  border-style:               dotted;
+  animation: rotateIndicator ease-in-out 1.0s;
+  animation-iteration-count: infinite;
+  transform-origin: 50% 50%;
+  animation-fill-mode:forwards; /*when the spec is finished*/
+  -webkit-animation: rotateIndicator ease-in-out 1.0s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-transform-origin: 50% 50%;
+  -webkit-animation-fill-mode:forwards; /*Chrome 16+, Safari 4+*/
+  -moz-animation: rotateIndicator ease-in-out 1.0s;
+  -moz-animation-iteration-count: infinite;
+  -moz-transform-origin: 50% 50%;
+  -moz-animation-fill-mode:forwards; /*FF 5+*/
+  -o-animation: rotateIndicator ease-in-out 1.0s;
+  -o-animation-iteration-count: infinite;
+  -o-transform-origin: 50% 50%;
+  -o-animation-fill-mode:forwards; /*Not implemented yet*/
+  -ms-animation: rotateIndicator ease-in-out 1.0s;
+  -ms-animation-iteration-count: infinite;
+  -ms-transform-origin: 50% 50%;
+  -ms-animation-fill-mode:forwards; /*IE 10+*/
+}
