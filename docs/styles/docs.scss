@@ -8,7 +8,7 @@
     padding: $padding-large-vertical $padding-base-horizontal;
     img {
       &:hover {
-        outline: 1px dotted $c-success;
+        outline: 2px dotted $c-danger;
       }
     }
   }
@@ -85,6 +85,17 @@
   }
 }
 
+@mixin swatch-color($background-color) {
+  background-color: $background-color;
+  code:before {
+    display: block;
+    width: 100%;
+    margin-bottom: $padding-large-vertical;
+    font-family: monospace;
+    content: $background-color + '\A';
+  }
+}
+
 // Colors
 .colors-section {
   @include clearfix;
@@ -100,36 +111,36 @@
     color: #fff;
     padding: 15px;
 
-    &.primary-darker { background-color: $c-primary-darker; & code:before { display: 'block'; font-family: monospace; content: '\A' + $c-primary-darker; } }
-    &.primary-dark   { background-color: $c-primary-dark;   & code:before { display: 'block'; font-family: monospace; content: '\A' + $c-primary-dark;   } }
-    &.primary        { background-color: $c-primary;        & code:before { display: 'block'; font-family: monospace; content: '\A' + $c-primary;        } }
-    &.primary-light  { background-color: $c-primary-light;  & code:before { display: 'block'; font-family: monospace; content: '\A' + $c-primary-light;  } }
+    &.primary-darker   { @include swatch-color($c-primary-darker);   }
+    &.primary-dark     { @include swatch-color($c-primary-dark);     }
+    &.primary          { @include swatch-color($c-primary);          }
+    &.primary-light    { @include swatch-color($c-primary-light);    }
 
-    &.success-darker { background-color: $c-success-darker; & code:before { display: 'block'; font-family: monospace; content: '\A' + $c-success-darker; } }
-    &.success-dark   { background-color: $c-success-dark;   & code:before { display: 'block'; font-family: monospace; content: '\A' + $c-success-dark;   } }
-    &.success        { background-color: $c-success;        & code:before { display: 'block'; font-family: monospace; content: '\A' + $c-success;        } }
-    &.success-light  { background-color: $c-success-light;  & code:before { display: 'block'; font-family: monospace; content: '\A' + $c-success-light;  } }
+    &.success-darker   { @include swatch-color($c-success-darker);   }
+    &.success-dark     { @include swatch-color($c-success-dark);     }
+    &.success          { @include swatch-color($c-success);          }
+    &.success-light    { @include swatch-color($c-success-light);    }
 
-    &.attention-darker { background-color: $c-attention-darker; & code:before { display: 'block'; font-family: monospace; content: '\A' + $c-attention-darker; } }
-    &.attention-dark   { background-color: $c-attention-dark;   & code:before { display: 'block'; font-family: monospace; content: '\A' + $c-attention-dark;   } }
-    &.attention        { background-color: $c-attention;        & code:before { display: 'block'; font-family: monospace; content: '\A' + $c-attention;        } }
-    &.attention-light  { background-color: $c-attention-light;  & code:before { display: 'block'; font-family: monospace; content: '\A' + $c-attention-light;  } }
+    &.attention-darker { @include swatch-color($c-attention-darker); }
+    &.attention-dark   { @include swatch-color($c-attention-dark);   }
+    &.attention        { @include swatch-color($c-attention);        }
+    &.attention-light  { @include swatch-color($c-attention-light);  }
 
-    &.info-darker { background-color: $c-info-darker; & code:before { display: 'block'; font-family: monospace; content: '\A' + $c-info-darker; } }
-    &.info-dark   { background-color: $c-info-dark;   & code:before { display: 'block'; font-family: monospace; content: '\A' + $c-info-dark;   } }
-    &.info        { background-color: $c-info;        & code:before { display: 'block'; font-family: monospace; content: '\A' + $c-info;        } }
-    &.info-light  { background-color: $c-info-light;  & code:before { display: 'block'; font-family: monospace; content: '\A' + $c-info-light;  } }
+    &.info-darker      { @include swatch-color($c-info-darker);      }
+    &.info-dark        { @include swatch-color($c-info-dark);        }
+    &.info             { @include swatch-color($c-info);             }
+    &.info-light       { @include swatch-color($c-info-light);       }
 
-    &.danger-darker { background-color: $c-danger-darker; & code:before { display: 'block'; font-family: monospace; content: '\A' + $c-danger-darker; } }
-    &.danger-dark   { background-color: $c-danger-dark;   & code:before { display: 'block'; font-family: monospace; content: '\A' + $c-danger-dark;   } }
-    &.danger        { background-color: $c-danger;        & code:before { display: 'block'; font-family: monospace; content: '\A' + $c-danger;        } }
-    &.danger-light  { background-color: $c-danger-light;  & code:before { display: 'block'; font-family: monospace; content: '\A' + $c-danger-light;  } }
+    &.danger-darker    { @include swatch-color($c-danger-darker);    }
+    &.danger-dark      { @include swatch-color($c-danger-dark);      }
+    &.danger           { @include swatch-color($c-danger);           }
+    &.danger-light     { @include swatch-color($c-danger-light);     }
 
-    &.gray-darker  { background-color: $c-gray-darker;  }
-    &.gray-dark    { background-color: $c-gray-dark;    }
-    &.gray         { background-color: $c-gray;         }
-    &.gray-light   { background-color: $c-gray-light;   }
-    &.gray-lighter { background-color: $c-gray-lighter; }
+    &.gray-darker      { @include swatch-color($c-gray-darker);      }
+    &.gray-dark        { @include swatch-color($c-gray-dark);        }
+    &.gray             { @include swatch-color($c-gray);             }
+    &.gray-light       { @include swatch-color($c-gray-light);       }
+    &.gray-lighter     { @include swatch-color($c-gray-lighter);     }
   }
 }
 
