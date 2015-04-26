@@ -480,6 +480,7 @@ select {
       border: $c-gray-darker;
     }
 }
+
 select:not([multiple]) {
     @extend .icon-arrow-down-24;
     background-position: right center;
