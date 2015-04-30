@@ -34,7 +34,7 @@ module.exports = function( grunt ) {
 
     respimg: {
       options: {
-        widths:  [ 160, 320, 640, 1280, 2560 ],
+        widths:  [ 80, 160, 320, 640, 1280, 2560 ],
         optimize: {
           input:  { svgo: 0, image_optim: 0, picopt: 0, imageOptim: 0 },
           output: { svgo: 0, image_optim: 0, picopt: 0, imageOptim: 0 }
