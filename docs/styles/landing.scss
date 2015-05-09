@@ -3,17 +3,12 @@
 
 @import "harrow";
 
-// .container {
-//   max-width:    1440px;
-//   margin-left:  auto;
-//   margin-right: auto;
-// }
-
 header {
   margin-top: $padding-large-vertical;
   margin-bottom: $padding-large-vertical - 5; // weird padding on logo
   nav {
     ul {
+      padding-left: 0;
       margin-top: $padding-base-vertical;
       list-style-type: none;
       li {
@@ -44,18 +39,45 @@ footer {
 }
 
 section.block-section {
-  height: 550px;
+  padding-top: $padding-large-vertical * 3;
+  padding-bottom: $padding-large-vertical * 3;
+  @each $h in h1, h2, h3, h4, h5, h6 {
+    & > #{$h} {
+      margin-bottom: $padding-large-vertical * 2;
+    }
+  }
   &#introduction {
-    height: 330px;
+    min-height: 330px;
     background-color: #9E93A1;
     color: #fff;
-    padding-top: 5 * $padding-large-vertical;
+  }
+  &#cli-super-powers {
   }
   &#use-cases {
     background-color: $c-gray-lighter;
+    #unit-and-integration-tests, #build-and-deploy, #operations {
+      a {
+        color: #fff;
+      }
+      padding: $padding-large-vertical * 2 $padding-large-horizontal;
+      border-radius: $padding-base-vertical;
+    }
+    #unit-and-integration-tests {
+      background-color: $c-solarized-blue;
+    }
+    #build-and-deploy {
+      background-color: $c-solarized-green;
+    }
+    #operations {
+      background-color: $c-solarized-cyan;
+    }
   }
   &#feels-like-home {
     background-color: #907B94;
+    color: #fff;
+    img {
+      padding: $padding-large-vertical * 2 $padding-large-horizontal;
+    }
   }
   &#value-proposition {
     background-color: #E7F0FA;
