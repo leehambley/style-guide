@@ -1,0 +1,63 @@
+---
+---
+
+@import "harrow";
+
+// .container {
+//   max-width:    1440px;
+//   margin-left:  auto;
+//   margin-right: auto;
+// }
+
+header {
+  margin-top: $padding-large-vertical;
+  margin-bottom: $padding-large-vertical - 5; // weird padding on logo
+  nav {
+    ul {
+      margin-top: $padding-base-vertical;
+      list-style-type: none;
+      li {
+        display: inline-block;
+        width: 100px;
+        a {
+          color: $c-gray-dark;
+          &, &.btn {
+            font-weight: bolder;
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  padding-top: $padding-large-vertical;
+  background-color: $c-gray-darker;
+  min-height: 180px;
+  color: #fff;
+  a {
+    color: $c-gray-light;
+    &:hover {
+      color: $c-gray-lighter;
+    }
+  }
+}
+
+section.block-section {
+  height: 550px;
+  &#introduction {
+    height: 330px;
+    background-color: #9E93A1;
+    color: #fff;
+    padding-top: 5 * $padding-large-vertical;
+  }
+  &#use-cases {
+    background-color: $c-gray-lighter;
+  }
+  &#feels-like-home {
+    background-color: #907B94;
+  }
+  &#value-proposition {
+    background-color: #E7F0FA;
+  }
+}

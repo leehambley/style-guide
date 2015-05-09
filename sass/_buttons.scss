@@ -50,6 +50,9 @@
 .btn-primary-link {
   @include button-variant( $btn-primary-bg, transparent, transparent );
 }
+.btn-cta {
+  @include button-variant( $btn-success-color, $btn-success-bg, $btn-success-border );
+}
 .btn-success {
   @include button-variant( $btn-success-color, $btn-success-bg, $btn-success-border );
 }

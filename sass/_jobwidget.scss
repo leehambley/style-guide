@@ -1,5 +1,6 @@
 .jobwidget {
   max-width: 350px;
+  color: $c-gray-darker;
   display: inline-block;
   & .jobwidget-heading, & .jobwidget-body {
     padding: $padding-base-vertical * 2 $padding-base-horizontal;
@@ -16,9 +17,9 @@
       position-top: -15px;
     }
     .jobwidget-runtime{
-      float:  right;
-      a {
-        color:  $c-gray-lighter;
+      float: right;
+      &, a {
+        color: $c-gray-lighter;
       }
     }
   }
@@ -35,10 +36,10 @@
     border-bottom-left-radius:   $jobwidget-radius-bl;
     border-bottom-right-radius:  $jobwidget-radius-br;
     h3 {
-      a { color: $c-gray-dark; &:hover { color: $c-primary; } }
+      &, & a { color: $c-gray-dark; &:hover { color: $c-primary; } }
     }
     h4 {
-      a { color: $c-gray-light; &:hover { color: $c-primary; } }
+      &, & a { color: $c-gray-light; &:hover { color: $c-primary; } }
     }
     .btn {
       border-radius: 3px;
