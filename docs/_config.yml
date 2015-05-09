@@ -3,4 +3,4 @@ highlighter: pygments
 exclude: ['Gemfile', 'Gemfile.lock', 'Guardfile', '_config.yml']
 
 sass:
-  sass_dir: dist/sass
+  sass_dir: sass

@@ -59,7 +59,7 @@ module.exports = function( grunt ) {
       },
       docs: {
         files: [
-          { expand: true, src: 'dist/**', dest: 'docs/' }
+          { expand: true, cwd: 'dist', src: '**', dest: 'docs/' }
         ]
       }
     },
