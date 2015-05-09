@@ -280,16 +280,3 @@ $container-lg: $container-large-desktop;
 $screen-sm-min: 768px;
 $screen-md-min: 992px;
 $screen-lg-min: 1200px;
-
-// -----------------------------------------------------------------------------
-// Animations
-// -----------------------------------------------------------------------------
-
-@keyframes rotateIndicator {
-  0% {
-    transform:  rotate(0deg) ;
-  }
-  100% {
-    transform:  rotate(360deg) ;
-  }
-}

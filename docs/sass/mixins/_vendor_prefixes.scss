@@ -10,3 +10,19 @@
   &:-ms-input-placeholder { color: $color; } // Internet Explorer 10+
   &::-webkit-input-placeholder  { color: $color; } // Safari and Chrome
 }
+
+@mixin vendor-prefix($name, $argument) {
+  -moz-#{$name}: #{$argument};
+  -ms-#{$name}: #{$argument};
+  -o-#{$name}: #{$argument};
+  -webkit-#{$name}: #{$argument};
+  #{$name}: #{$argument};
+}
+
+@mixin vendor-prefix-keyframes($name) {
+  @-moz-keyframes #{$name} { @content; }
+  @-ms-keyframes #{$name} { @content; }
+  @-o-keyframes #{$name} { @content; }
+  @-webkit-keyframes #{$name} { @content; }
+  @keyframes #{$name} { @content; }
+}
